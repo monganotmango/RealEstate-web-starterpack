@@ -5,21 +5,20 @@ const data = [
     icon: <HiShieldCheck />,
     heading: "Best interest rates on the market",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "BEST INTERST RATE BEST INTERST RATE BEST INTERST RATE BEST INTERST RATE BEST INTERST RATE BEST INTERST RATE BEST INTERST RATE ",
   },
   {
     icon: <MdCancel />,
     heading: "Prevent unstable prices",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "Prevent unstable prices Prevent unstable pricesPrevent unstable prices Prevent unstable prices Prevent unstable prices",
   },
   {
     icon: <MdAnalytics />,
     heading: "Best price on the market",
     detail:
-      "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+      "Best price on the market Best price on the market Best price on the market Best price on the market Best price on the market",
   },
 ];
 export default data;
 
-//test//

@@ -1,9 +1,9 @@
 .v-container .image-container {
-    border: 8px solid rgb(232, 232, 232 / 93%);
+    border: 8px solid rgb(232 232 232 / 93%);
 }
 
-.container>div {
-    flex: 1
+.v-container>div {
+    flex: 1;
 }
 
 .v-right {
@@ -23,6 +23,11 @@
     margin-bottom: 20px;
 }
 
+.accordionItem.expanded {
+    box-shadow: var(--shadow);
+    border-radius: 6px;
+}
+
 .accordionButton {
     background: white;
     padding: 1rem;
@@ -38,9 +43,21 @@
 }
 
 .icon svg {
-    fill: var(--blue)
+    fill: var(--blue);
 }
 
-.accordionButton.primaryText {
-    font-style: 1.1rem;
+.accordionButton .primaryText {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1024px) {
+    .v-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .accordionButton .primaryText {
+        font-size: .8rem;
+    }
 }

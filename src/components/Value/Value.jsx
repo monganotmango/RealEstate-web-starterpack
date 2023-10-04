@@ -1,46 +1,67 @@
-import React from 'react'
+import React, { useState } from "react";
 import {
     Accordion,
     AccordionItem,
     AccordionItemHeading,
-    AccordionItemPanel,
     AccordionItemButton,
-    AccordionItemState
-} from 'react-accessible-accordion'
-import "react-accessible-accordion/dist/fancy-example.css"
-import { MdOutlineArrowDropDown } from 'react-icons/md'
-import './Value.css'
-import data from '../../utils/accordion'
+    AccordionItemPanel,
+    AccordionItemState,
+} from "react-accessible-accordion";
+import "react-accessible-accordion/dist/fancy-example.css";
+import {
+    MdOutlineArrowDropDown,
+    MdOutlineArrowDropDownCircle,
+} from "react-icons/md";
+import data from "../../utils/accordion.jsx";
+import "./Value.css";
+// Demo styles, see 'Styles' section below for some notes on use.
 
 const Value = () => {
     return (
-        <section className="v-wrapper">
+        <section id="value" className="v-wrapper">
             <div className="paddings innerWidth flexCenter v-container">
-
+                {/* left side */}
                 <div className="v-left">
                     <div className="image-container">
-                        <img src="value.png" alt="" />
+                        <img src="./value.png" alt="" />
                     </div>
                 </div>
 
+                {/* right */}
                 <div className="flexColStart v-right">
-                    <span className='orangeText'>Our Value</span>
-                    <span className='primaryText'>Value we give to you</span>
-                    <span className='secondaryText'>We are always ready to help by providing best services for you.<br />We believe a good place to live can make your life better</span>
+                    <span className="orangeText">Our Value</span>
+
+                    <span className="primaryText">Value We Give to You</span>
+
+                    <span className="secondaryText">
+                        We always ready to help by providijng the best services for you.
+                        <br />
+                        We beleive a good blace to live can make your life better
+                    </span>
+
                     <Accordion
-                        className='accordion'
+                        className="accordion"
                         allowMultipleExpanded={false}
                         preExpanded={[0]}
                     >
                         {data.map((item, i) => {
+                            const [className, setClassName] = useState(null);
                             return (
-                                <AccordionItem className='accordianItem' key={i} uuid={i}>
+                                <AccordionItem className={`accordionItem ${className}`} uuid={i} key={i}>
                                     <AccordionItemHeading>
-                                        <AccordionItemButton>
-                                            <div className="flexCenter icon">
-                                                {item.icon}
-                                            </div>
-                                            <span className="primaryText">
+                                        <AccordionItemButton className="flexCenter accordionButton ">
+                                            {/* just for getting state of item */}
+                                            <AccordionItemState>
+                                                {({ expanded }) =>
+                                                    expanded
+                                                        ? setClassName("expanded")
+                                                        : setClassName("collapsed")
+                                                }
+                                            </AccordionItemState>
+                                            <div className="flexCenter icon">{item.icon}</div>
+                                            <span
+                                                className="primaryText"
+                                            >
                                                 {item.heading}
                                             </span>
                                             <div className="flexCenter icon">
@@ -49,9 +70,7 @@ const Value = () => {
                                         </AccordionItemButton>
                                     </AccordionItemHeading>
                                     <AccordionItemPanel>
-                                        <p className="secondaryText">
-                                            {item.detail}
-                                        </p>
+                                        <p className="secondaryText">{item.detail}</p>
                                     </AccordionItemPanel>
                                 </AccordionItem>
                             );
@@ -60,8 +79,7 @@ const Value = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Value
-
+export default Value;

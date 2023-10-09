@@ -1,19 +1,22 @@
 import React from 'react'
 import './Header.css'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
     return (
         <section className="h-wrapper">
             <div className="flexCenter paddings innerWidth h-container">
-                <img src="./logo.png" alt="logo" width={100} />
+                <NavLink to="/">
+                    <img src="./logo.png" alt="logo" width={100} />
+                </NavLink>
                 <div className="flexCenter h-menu">
-                    <a href="">Residencies</a>
-                    <a href="">Our Value</a>
-                    <a href="">Contact Us</a>
-                    <a href="">Get Started</a>
+                    <NavLink to="/properties">Properties</NavLink>
+                    <a href="mailto:mithravindanambiar2004@gmail.com">Contact</a>
+                    {/*login button */}
                     <button className="button">
-                        <a href="">Contact</a>
+                        Login
                     </button>
+
                 </div>
             </div>
         </section>

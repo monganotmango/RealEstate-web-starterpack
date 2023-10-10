@@ -16,4 +16,4 @@ const ProfileMenu = ({ user, logout }) => {
     )
 }
 
-export default ProfileMenu
+export default ProfileMenu;
